@@ -11,7 +11,7 @@ const styles = {
   },
   container: {
     backgroundImage: 'linear-gradient(to right, rgb(4,4,4), rgb(8,8,8))'
-  }
+  },
 }
 
 export default withStyles(styles)((props) => {
@@ -23,7 +23,13 @@ export default withStyles(styles)((props) => {
           <Typography variant='h3' className={classes.headerQuote}>This was once impossible.</Typography>
         </Fade>
       </Hero>
-      <ContentContainer>
+      <ContentContainer style={{
+        display:'flex',
+        flex: 1,
+        justifyContent: 'center',
+        paddingTop: '40px'
+      }}>
+        <Typography variant='h2'>Stephen Karl Jeoffrey G. Hisole</Typography>
       </ContentContainer>
       <Hero source={hero2Img} />
     </Grid>

@@ -15,9 +15,9 @@ const styles = {
 }
 
 export default withStyles(styles)((props) => {
-	const { classes } = props;
+	const { classes, style } = props;
 	return (
-		<Paper className={classes.container} elevation={3}>
+		<Paper className={classes.container} style={{...style}} elevation={3}>
 			{props.children}
 		</Paper>
 	)
