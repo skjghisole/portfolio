@@ -3,11 +3,18 @@ import { Grid } from '@material-ui/core'
 
 export default (props) => {
 	const [windowScroll, setWindowScroll] = useState(window.pageYOffset/3)
+	const [moving, setMoving] = useState({})
+
+	if (props.filtered) {
+		setMoving({})
+	}
 
 	const transform = () => {
-		const temp = window.pageYOffset/3
-		console.log(windowScroll)
-		setWindowScroll(temp)
+		if (windowScroll < 200) {
+			const temp = window.pageYOffset/3
+			console.log(temp)
+			setWindowScroll(temp)
+		}
 	}
 
 	useEffect(() => {
@@ -17,7 +24,7 @@ export default (props) => {
 	return (
 		<div style={{
       backgroundImage: `url(${props.source})`,
-	    height: "90vh",
+	    height: "120vh",
 	    maxHeight: "1000px",
 	    overflow: "hidden",
 	    position: "relative",
