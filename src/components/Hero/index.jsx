@@ -33,6 +33,8 @@ export default (props) => {
 		window.addEventListener("scroll", debounce(transform))
 	})
 
+	const { style } = props
+
 	return (
 		<div style={{
       backgroundImage: `url(${props.source})`,
@@ -48,19 +50,20 @@ export default (props) => {
 	    display: "flex",
 	    alignItems: "center",
 	    transform: "translate3d(0," + windowScroll + "px,0)",
-	        "&:before": {
-      background: "rgba(0, 0, 0, 0.5)"
-    },
-    "&:after,&:before": {
-      position: "absolute",
-      zIndex: "1",
-      width: "100%",
-      height: "100%",
-      display: "block",
-      left: "0",
-      top: "0",
-      content: "''"
-    }
+      "&:before": {
+      	background: "rgba(0, 0, 0, 0.5)"
+    	},
+	    "&:after,&:before": {
+	      position: "absolute",
+	      zIndex: "1",
+	      width: "100%",
+	      height: "100%",
+	      display: "block",
+	      left: "0",
+	      top: "0",
+	      content: "''"
+	    },
+	    ...style
 		}}
 		>
 			{props.children}

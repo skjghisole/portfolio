@@ -4,8 +4,6 @@ import { Grid, Paper, withStyles } from '@material-ui/core'
 const styles = {
 	container: {
 		backgroundColor: 'rgb(220,220,220)',
-		maxHeight: '900px',
-		height: '120vh',
 	 	margin: "90px 30px 0px",
     borderRadius: "6px",
     position: 'relative',

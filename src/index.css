@@ -20,3 +20,10 @@ code {
   font-weight: bold;
   font-style: bold;
 }
+
+@font-face {
+  font-family: 'robotomono';
+  src: url('assets/fonts/rm.ttf') format('truetype');
+  font-weight: bold;
+  font-style: bold;
+}
