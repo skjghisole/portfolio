@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+
+@font-face {
+  font-family: 'mozart';
+  src: url('assets/fonts/font.ttf') format('truetype');
+  font-weight: bold;
+  font-style: bold;
+}

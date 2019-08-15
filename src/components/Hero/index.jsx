@@ -12,14 +12,13 @@ export default (props) => {
 	const transform = () => {
 		if (windowScroll < 200) {
 			const temp = window.pageYOffset/3
-			console.log(temp)
 			setWindowScroll(temp)
 		}
 	}
 
 	useEffect(() => {
 		window.addEventListener("scroll", transform)
-	}, [])
+	})
 
 	return (
 		<div style={{

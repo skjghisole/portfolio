@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Paper, withStyles } from '@material-ui/core'
 
 const styles = {
@@ -6,7 +6,7 @@ const styles = {
 		backgroundColor: 'rgb(220,220,220)',
 		maxHeight: '900px',
 		height: '120vh',
-	 	margin: "10px 30px 0px",
+	 	margin: "30px 30px 0px",
     borderRadius: "6px",
     position: 'relative',
     boxShadow:
