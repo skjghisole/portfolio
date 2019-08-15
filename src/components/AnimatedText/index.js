@@ -5,19 +5,30 @@ import Typewriter from 'typewriter-effect'
 export default () => {
 	const [start, setStart] = useState(false)
 
+	const cb = () => {
+		const scrollY = window.scrollY
+		const difference = (window.outerHeight - window.innerHeight) * 1.5
+		if (scrollY >= difference) {
+			setStart(true)
+		}
+	}
+
+
 	useEffect(() => {
-		window.addEventListener("scroll", () => {
-			const scrollY = window.scrollY
-			const difference = (window.outerHeight - window.innerHeight) * 1.5
-			if (scrollY >= difference) {
-				setStart(true)
-			}
-		})
+		if (!start) {
+			cb()
+		}
+		window.addEventListener("scroll", cb)
 		return window.removeEventListener("scroll", () => setStart(false))
 	})
 
 	return (
-	  <Typography variant='h2' style={{ fontFamily: "mozart" }}>
+	  <Typography
+	  	variant='h2'
+	  	style={{
+	  		fontFamily: "mozart",
+			}}
+		>
 		    {start && <Typewriter onInit={(typewriter) => {
 	    	 	// typewriter.typeString('Hello!')
 		    		// .callFunction((cb) => console.log(cb))
@@ -27,27 +38,29 @@ export default () => {
 		    		// typewriter
 		    	typewriter
 			    	.changeDelay(125)
-			    	.typeString('skjashdjk')
-		    		.callFunction((cb) => console.log(cb))
+			    	.typeString('<skjashdjk')
+		    		.callFunction(() => {})
 		    		.changeDeleteSpeed(40)
 		    		.deleteChars(6)
 		    		.typeString('ghiasde')
-		    		.callFunction((cb) => console.log(cb))
+		    		.callFunction(() => {})
 		    		.deleteChars(4)
 		    		.typeString('sole')
-		    		.callFunction((cb) => console.log(cb))
+		    		.callFunction(() => {})
 		    		.typeString('.')
-		    		.callFunction((cb) => console.log(cb))
+		    		.callFunction(() => {})
 		    		.pauseFor(500)
 		    		.typeString('.')
-		    		.callFunction((cb) => console.log(cb))
+		    		.callFunction(() => {})
 		    		.pauseFor(500)
+		    		.deleteChars(2)
 			    	.changeDelay(50)
-		    		.typeString('(Trust Me, its not gibberish)')
-		    		.changeDeleteSpeed(30)
-		    		.callFunction((cb) => console.log(cb))
-		    		.pauseFor(2000)
-		    		.deleteChars(31)
+		    		// .typeString('(Trust Me, its not gibberish)')
+		    		// .changeDeleteSpeed(30)
+		    		// .callFunction((cb) => console.log(cb))
+		    		// .pauseFor(2000)
+		    		.typeString(' />')
+		    		.callFunction(() => {})
 		    		.start()
 
 		    }}

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Grid, Typography, withStyles, Fade } from '@material-ui/core'
+import { Grid, Typography, withStyles, Fade, Paper, Avatar, Hidden  } from '@material-ui/core'
 import { Hero, ContentContainer, AnimatedText } from './components'
 import hero3Img from './assets/hero3.jpg'
 import hero2Img from './assets/hero5.jpg'
+import avatar from './assets/me.jpg'
 
 const styles = {
   headerQuote: {
@@ -35,31 +36,29 @@ export default withStyles(styles)((props) => {
           <Typography variant='h3' className={classes.headerQuote}>This was once impossible.</Typography>
         </Fade>
       </Hero>
-      <ContentContainer style={{
-        display:'flex',
-        flex: 1,
-        justifyContent: 'center',
-        paddingTop: '40px'
-      }}>
-      <AnimatedText />
-{/*        <Typography variant='h2' style={{ fontFamily: "mozart" }}>
-          <Typewriter
-            options={{
-              strings: 'skjghisole',
-              cursor: '_',
-              autoStart: true
-            }}
-          >
-          {console.log(window)}
-          {
-            console.log(window.innerHeight)
-            // 1.5*(outer - inner) == scrollY
-          }
-          {
-            console.log(window.outerHeight)
-          }
-          </Typewriter>
-        </Typography> */}
+      <ContentContainer>
+        <Grid container direction="column" justify='center' alignItems='center'>
+          <Grid container justify="center" alignItems="center">
+            <Avatar src={avatar}
+              style={{
+                width: 240,
+                height: 240,
+                position: 'relative',
+                margin: "-120px 30px 0px",
+              }}
+            />
+          </Grid>
+            <Grid item>
+              <AnimatedText />
+            </Grid>
+          <Grid container justify='center' alignItems='center'>
+            <Grid item xs={8} md={4}>
+              <Typography variant="caption" style={{ fontSize: '1.6rem' }}> 
+                I am <strong>Stephen Karl Jeoffrey G. Hisole</strong>. A Back End Focused Software Engineer with full stack experience.
+              </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
       </ContentContainer>
       <Hero source={hero2Img} />
     </Grid>
