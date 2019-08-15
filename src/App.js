@@ -3,7 +3,6 @@ import { Grid, Typography, withStyles, Fade } from '@material-ui/core'
 import { Hero, ContentContainer, AnimatedText } from './components'
 import hero3Img from './assets/hero3.jpg'
 import hero2Img from './assets/hero5.jpg'
-import heroImg from './assets/hero1.jpg'
 
 const styles = {
   headerQuote: {

@@ -16,8 +16,21 @@ export default (props) => {
 		}
 	}
 
+	const debounce = (func, ms=5) => {
+		let timeout
+		return (props) => {
+			const later = () => {
+				func.apply(this, props)
+			}
+			const trigger = !timeout
+			clearTimeout(timeout)
+			timeout = setTimeout(later, ms)
+			trigger && func.apply(this, props)
+		}
+	}
+
 	useEffect(() => {
-		window.addEventListener("scroll", transform)
+		window.addEventListener("scroll", debounce(transform))
 	})
 
 	return (
